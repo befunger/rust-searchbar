@@ -1,3 +1,4 @@
+pub mod encode_query;
 pub mod google;
 pub mod maps;
 pub mod youtube;

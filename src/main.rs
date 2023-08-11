@@ -14,12 +14,12 @@ fn index() -> &'static str {
 #[get("/search?<cmd>")]
 fn search(cmd: String) -> Redirect {
     let command = utils::get_command_from_query_string(&cmd);
-    
+
     let redirect_url = match command {
         "reddit" => String::from("https://reddit.com"),
         "git" => String::from("https://github.com"),
-        "yt" => utils::youtube::construct_youtube_search_url(&cmd),
-        "maps" => utils::maps::construct_maps_search_url(&cmd),
+        "yt" => utils::youtube::construct_youtube_search_url(&cmd, &command),
+        "maps" => utils::maps::construct_maps_search_url(&cmd, &command),
         _ => utils::google::construct_google_search_url(&cmd)
     };
     println!("Query recieved is {} with command {}", cmd, command);
@@ -30,5 +30,3 @@ fn search(cmd: String) -> Redirect {
 fn main() {
     rocket::ignite().mount("/", routes![index, search]).launch();
 }
-
-// Google, Maps, reddit, youtube

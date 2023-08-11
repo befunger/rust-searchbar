@@ -1,16 +1,7 @@
-extern crate percent_encoding; // For dealing with whitespace encoding and such
-
-use percent_encoding::{utf8_percent_encode, AsciiSet, CONTROLS};
-
-const FRAGMENT: &AsciiSet = &CONTROLS
-        .add(b' ')
-        .add(b'"')
-        .add(b'<')
-        .add(b'>')
-        .add(b'`');         // Adds relevant characters to encode
+use super::encode_query;
 
 pub fn construct_google_search_url(query: &str) -> String {
-    let encoded_query = utf8_percent_encode(query, FRAGMENT).to_string();
+    let encoded_query = encode_query::encode_search_query(query, ""); // No command results in google query
     let google_search_url = format!("https://google.com/search?q={}", encoded_query);
 
     google_search_url
