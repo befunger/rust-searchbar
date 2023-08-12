@@ -20,6 +20,7 @@ fn search(cmd: String) -> Redirect {
         "git" => String::from("https://github.com"),
         "yt" => utils::youtube::construct_youtube_search_url(&cmd, &command),
         "maps" => utils::maps::construct_maps_search_url(&cmd, &command),
+        "gh" => utils::github::construct_github_url(&cmd, &command),
         _ => utils::google::construct_google_search_url(&cmd)
     };
     println!("Query recieved is {} with command {}", cmd, command);

@@ -2,6 +2,7 @@ pub mod encode_query;
 pub mod google;
 pub mod maps;
 pub mod youtube;
+pub mod github;
 //TODO: add reddit (subreddit)
 
 pub fn get_command_from_query_string(query_string: &str) -> &str {
