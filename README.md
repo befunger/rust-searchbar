@@ -3,6 +3,9 @@ Commands are used to direct search to specific websites, such as "maps Stockholm
 
 Currently implemented commands:
 git     - github
+
 maps   - Google Maps
+
 yt     - Youtube
+
 Defaults to standard Google Search
