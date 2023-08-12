@@ -17,10 +17,9 @@ fn search(cmd: String) -> Redirect {
 
     let redirect_url = match command {
         "reddit" => String::from("https://reddit.com"),
-        "git" => String::from("https://github.com"),
+        "git" => utils::github::construct_github_url(&cmd, &command),
         "yt" => utils::youtube::construct_youtube_search_url(&cmd, &command),
         "maps" => utils::maps::construct_maps_search_url(&cmd, &command),
-        "gh" => utils::github::construct_github_url(&cmd, &command),
         _ => utils::google::construct_google_search_url(&cmd)
     };
     println!("Query recieved is {} with command {}", cmd, command);
