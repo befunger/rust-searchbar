@@ -3,7 +3,7 @@ pub mod google;
 pub mod maps;
 pub mod youtube;
 pub mod github;
-//TODO: add reddit (subreddit)
+pub mod reddit;
 
 pub fn get_command_from_query_string(query_string: &str) -> &str {
     // Returns command from query string (initial text before a whitespace)
