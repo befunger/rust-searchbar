@@ -1,3 +1,4 @@
+// Custom behaviour for Github queries
 use super::encode_query;
 
 pub fn construct_github_url(query: &str, command: &str) -> String {

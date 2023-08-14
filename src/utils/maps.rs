@@ -1,3 +1,4 @@
+// Custom behaviour for Google Maps queries
 use super::encode_query;
 
 pub fn construct_maps_search_url(query: &str, command: &str) -> String {

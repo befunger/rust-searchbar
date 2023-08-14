@@ -1,3 +1,4 @@
+// Custom behaviour for Google Search queries
 use super::encode_query;
 
 pub fn construct_google_search_url(query: &str) -> String {

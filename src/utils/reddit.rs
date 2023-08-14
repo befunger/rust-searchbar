@@ -1,3 +1,4 @@
+// Custom behaviour for Reddit queries
 use super::encode_query;
 
 pub fn construct_reddit_url(query: &str, command: &str) -> String {

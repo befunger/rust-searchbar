@@ -1,3 +1,4 @@
+// Collects all sub-modules and implements behaviour for identifying command
 pub mod encode_query;
 pub mod google;
 pub mod maps;
@@ -6,7 +7,7 @@ pub mod github;
 pub mod reddit;
 
 pub fn get_command_from_query_string(query_string: &str) -> &str {
-    // Returns command from query string (initial text before a whitespace)
+    // Returns command from query string (initial text before first whitespace)
     if query_string.contains(' ') {
         let index_of_space = query_string.find(' ').unwrap_or(0);
         return &query_string[..index_of_space];

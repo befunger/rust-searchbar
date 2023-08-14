@@ -1,4 +1,5 @@
-extern crate percent_encoding; // For dealing with whitespace encoding and such
+// Implements encoding of queries with special characters (whitespace, #, etc.)
+extern crate percent_encoding;
 
 use percent_encoding::{utf8_percent_encode, AsciiSet, CONTROLS};
 

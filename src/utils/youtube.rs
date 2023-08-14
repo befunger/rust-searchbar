@@ -1,3 +1,4 @@
+// Custom behaviour for Youtube queries
 use super::encode_query;
 
 pub fn construct_youtube_search_url(query: &str, command: &str) -> String {
@@ -5,7 +6,7 @@ pub fn construct_youtube_search_url(query: &str, command: &str) -> String {
         let base_maps_url = "https://www.youtube.com/";
         base_maps_url.to_string()
     }
-    else { // Maps call with an argument (query[..6] should remove leading five "maps ")
+    else {
         let encoded_query: String = encode_query::encode_search_query(&query, &command);
         let maps_search_url = format!("https://www.youtube.com/results?search_query={}", encoded_query);
         maps_search_url
