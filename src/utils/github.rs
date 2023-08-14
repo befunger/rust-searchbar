@@ -12,8 +12,8 @@ mod tests {
 
     #[test]
     fn test_github_query_repo() {
-        let fake_query = "gh befunger/redblacktree";
-        let fake_command = "gh";
+        let fake_query = "git befunger/redblacktree";
+        let fake_command = "git";
         assert_eq!(
             construct_github_url(fake_query, fake_command),
             "https://github.com/befunger/redblacktree"
@@ -23,8 +23,8 @@ mod tests {
     #[test]
     fn test_github_query_profile() {
         // Test with encoded whitespace
-        let fake_query = "gh befunger";
-        let fake_command = "gh";
+        let fake_query = "git befunger";
+        let fake_command = "git";
         assert_eq!(
             construct_github_url(fake_query, fake_command),
             "https://github.com/befunger"
