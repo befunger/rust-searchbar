@@ -10,9 +10,9 @@ pub fn construct_weather_url(query: &str, command: &str) -> String {
     let lowercased = query[cmd_len+1..].to_ascii_lowercase();
     //let location = query[command_length+1..]; // Cuts out the "weather " part of query
     let weather_redirect_url = match lowercased.as_str() {
-        "vancouver" => "https://weather.gc.ca/city/pages/bc-74_metric_e.html".to_string(),
-        "victoria" => "https://weather.gc.ca/city/pages/bc-85_metric_e.html".to_string(),
-        "stockholm" => "https://www.klart.se/se/stockholms-l%C3%A4n/v%C3%A4der-stockholm/".to_string(),
+        "vancouver" => "https://weather.gc.ca/forecast/hourly/bc-74_metric_e.html".to_string(),
+        "victoria" => "https://weather.gc.ca/forecast/hourly/bc-85_metric_e.html".to_string(),
+        "stockholm" => "https://www.klart.se/se/stockholms-l%C3%A4n/v%C3%A4der-stockholm/timmar/".to_string(),
         _ => google::construct_google_search_url(&query) // Standard google search for "weather <...>"
     };
     weather_redirect_url.to_string()
