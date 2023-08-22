@@ -5,6 +5,7 @@ pub mod maps;
 pub mod youtube;
 pub mod github;
 pub mod reddit;
+pub mod weather;
 
 pub fn get_command_from_query_string(query_string: &str) -> &str {
     // Returns command from query string (initial text before first whitespace)
