@@ -25,8 +25,8 @@ fn search(cmd: String) -> Redirect {
         "weather" => utils::weather::construct_weather_url(&cmd, &command),
         _ => utils::google::construct_google_search_url(&cmd)
     };
-    println!("Query recieved is {} with command {}", cmd, command);
-    println!("Redirected to {}", redirect_url);
+    println!("Query recieved is {}.", cmd);
+    println!("Redirected to {}.", redirect_url);
     Redirect::to(redirect_url)
 }
 
