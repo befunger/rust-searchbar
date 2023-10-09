@@ -19,7 +19,7 @@ fn search(cmd: String) -> Redirect {
     // Redirects recognised commands to custom functionality, defaults to Google Search query
     let redirect_url = match command {
         "reddit" => utils::reddit::construct_reddit_url(&cmd, &command),
-        "git" => utils::github::construct_github_url(&cmd, &command),
+        "gh" => utils::github::construct_github_url(&cmd, &command),
         "yt" => utils::youtube::construct_youtube_search_url(&cmd, &command),
         "maps" => utils::maps::construct_maps_search_url(&cmd, &command),
         "weather" => utils::weather::construct_weather_url(&cmd, &command),
