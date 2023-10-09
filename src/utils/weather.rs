@@ -30,7 +30,7 @@ mod tests {
         let fake_command = "weather";
         assert_eq!(
             construct_weather_url(fake_query, fake_command),
-            "https://weather.gc.ca/city/pages/bc-74_metric_e.html"
+            "https://weather.gc.ca/forecast/hourly/bc-74_metric_e.html"
         );
     }
 
@@ -41,7 +41,7 @@ mod tests {
         let fake_command = "weather";
         assert_eq!(
             construct_weather_url(fake_query, fake_command),
-            "https://weather.gc.ca/city/pages/bc-74_metric_e.html"
+            "https://weather.gc.ca/forecast/hourly/bc-74_metric_e.html"
         );
     }
 
