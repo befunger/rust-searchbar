@@ -5,11 +5,13 @@ use percent_encoding::{utf8_percent_encode, AsciiSet, CONTROLS};
 
 const FRAGMENT: &AsciiSet = &CONTROLS
         .add(b' ')
+        .add(b'\'')
         .add(b'"')
         .add(b'<')
         .add(b'>')
         .add(b'`')
-        .add(b'#');         // Adds relevant characters to encode
+        .add(b'#')
+        .add(b'+');         // Adds relevant characters to encode
 
 pub fn encode_search_query(full_query: &str, command: &str) -> String{
     let command_length = command.len();
